@@ -1,3 +1,4 @@
+import { randomUUID } from 'crypto';
 import * as ip from 'ip';
 import { Kafka,logLevel } from 'kafkajs';
 
@@ -15,7 +16,7 @@ const kafka = new Kafka({
 })
 
 const topic = 'FLINK_TOPIC'
-const consumer = kafka.consumer({ groupId: 'GROUP' })
+const consumer = kafka.consumer({ groupId: 'GROUP3 UUDI:'+randomUUID() })
 
 const run = async () => {
   await consumer.connect()

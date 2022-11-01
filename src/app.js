@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+var crypto_1 = require("crypto");
 var ip = require("ip");
 var kafkajs_1 = require("kafkajs");
 var host = process.env.HOST_IP || ip.address();
@@ -50,7 +51,7 @@ var kafka = new kafkajs_1.Kafka({
     }
 });
 var topic = 'FLINK_TOPIC';
-var consumer = kafka.consumer({ groupId: 'GROUP' });
+var consumer = kafka.consumer({ groupId: 'GROUP3 UUDI:' + (0, crypto_1.randomUUID)() });
 var run = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
